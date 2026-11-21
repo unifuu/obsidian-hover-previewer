@@ -1,0 +1,7 @@
+# Local Obsidian vault location; never commit this machine-specific path.
+.vault-path
+.DS_Store
+
+# Build and dependency artifacts.
+node_modules/
+main.js

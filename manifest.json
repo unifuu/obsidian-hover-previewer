@@ -1,0 +1,9 @@
+{
+  "id": "hover-cover-preview",
+  "name": "Hover Cover Preview",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Preview a note's cover property when hovering internal links.",
+  "author": "unifuu",
+  "isDesktopOnly": false
+}
