@@ -10,7 +10,7 @@ export default class HoverCoverPreviewPlugin extends Plugin {
   private activeLink: HTMLElement | null = null;
 
   async onload(): Promise<void> {
-    this.preview = document.body.createDiv({ cls: "hover-cover-preview" });
+    this.preview = document.body.createDiv({ cls: "hover-preview" });
     this.preview.setAttribute("role", "tooltip");
     this.preview.style.display = "none";
 
@@ -37,6 +37,10 @@ export default class HoverCoverPreviewPlugin extends Plugin {
       if (event.relatedTarget instanceof Node && link.contains(event.relatedTarget)) return;
       this.scheduleHide();
     });
+
+    // Navigation can replace the hovered element before it emits pointerout.
+    // Clear the informational preview before any click is handled instead.
+    this.registerDomEvent(document, "pointerdown", () => this.hidePreview());
 
     this.register(() => this.preview?.remove());
   }

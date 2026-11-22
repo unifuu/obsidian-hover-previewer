@@ -27,7 +27,7 @@ if [[ ! -d "$vault_dir/.obsidian" ]]; then
 fi
 
 cd "$script_dir"
-echo "Building Hover Cover Preview…"
+echo "Building Obsidian Hover Preview…"
 npm run build
 
 mkdir -p "$plugin_dir"

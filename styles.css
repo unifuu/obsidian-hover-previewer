@@ -1,4 +1,4 @@
-.hover-cover-preview {
+.hover-preview {
   position: fixed;
   z-index: var(--layer-popover);
   /* The preview is informational only and must never intercept a link click. */
@@ -11,7 +11,7 @@
   box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
 }
 
-.hover-cover-preview img {
+.hover-preview img {
   display: block;
   width: 100%;
   max-height: 320px;

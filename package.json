@@ -1,5 +1,5 @@
 {
-  "name": "obsidian-hover-cover-preview",
+  "name": "obsidian-hover-preview",
   "version": "0.1.0",
   "description": "Shows a linked note's cover image while hovering an internal link.",
   "main": "main.js",
