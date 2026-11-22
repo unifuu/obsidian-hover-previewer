@@ -38,8 +38,6 @@ export default class HoverCoverPreviewPlugin extends Plugin {
       this.scheduleHide();
     });
 
-    this.registerDomEvent(this.preview, "mouseenter", () => this.clearHideTimer());
-    this.registerDomEvent(this.preview, "mouseleave", () => this.scheduleHide());
     this.register(() => this.preview?.remove());
   }
 
@@ -112,10 +110,16 @@ export default class HoverCoverPreviewPlugin extends Plugin {
 
   private positionPreview(link: HTMLElement): void {
     if (!this.preview) return;
+
     const rect = link.getBoundingClientRect();
     const width = 220;
-    const left = Math.min(Math.max(8, rect.left), window.innerWidth - width - 8);
-    const top = Math.min(rect.bottom + 8, window.innerHeight - 300);
+    const gap = 12;
+    const rightSide = rect.right + gap;
+    const leftSide = rect.left - width - gap;
+    const left = rightSide + width <= window.innerWidth - 8
+      ? rightSide
+      : Math.max(8, leftSide);
+    const top = Math.max(8, Math.min(rect.top, window.innerHeight - 328));
     this.preview.setCssProps({ left: `${left}px`, top: `${top}px` });
   }
 

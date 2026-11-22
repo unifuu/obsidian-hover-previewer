@@ -1,6 +1,8 @@
 .hover-cover-preview {
   position: fixed;
   z-index: var(--layer-popover);
+  /* The preview is informational only and must never intercept a link click. */
+  pointer-events: none;
   width: 220px;
   padding: 6px;
   border: 1px solid var(--background-modifier-border);

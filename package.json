@@ -8,7 +8,7 @@
     "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production"
   },
   "keywords": ["obsidian", "plugin", "hover", "cover"],
-  "author": "",
+  "author": "unifuu",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^22.0.0",
